@@ -3,7 +3,7 @@ package main
 // The line `var userProfile = map[string]string{}` is declaring a variable named `userProfile` in Go,
 // which is a map data structure. This map is defined to have keys of type `string` and values of type
 // `string`. Initially, the map is empty as it is initialized without any key-value pairs.
-var userProfile = map[string]string{}
+var userProfile = make(map[string]string)
 
 // The main function adds, prints, deletes, and updates key-value pairs in a map data structure.
 func main() {
