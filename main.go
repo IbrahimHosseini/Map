@@ -8,6 +8,38 @@ var userProfile = make(map[string]string)
 // The main function adds, prints, deletes, and updates key-value pairs in a map data structure.
 func main() {
 
+	// The code snippet `addItem := func(key string, value string) {
+	// 		userProfile[key] = value
+	// 	}` is defining an anonymous function in Go that takes two parameters: `key` of type `string` and
+	// `value` of type `string`. This function is then assigned to a variable `addItem` using the short
+	// variable declaration `:=`.
+	addItem := func(key string, value string) {
+		userProfile[key] = value
+	}
+
+	// The code snippet `printMapData := func() {
+	// 		println("==================================")
+	// 		for key, value := range userProfile {
+	// 			println(key, ": => ", value)
+	// 		}
+	// 	}` is defining an anonymous function in Go that iterates over the `userProfile` map and prints
+	// each key-value pair.
+	printMapData := func() {
+		println("==================================")
+		for key, value := range userProfile {
+			println(key, ": => ", value)
+		}
+	}
+
+	// The code snippet `deleteMapData := func(key string) {
+	// 		delete(userProfile, key)
+	// 	}` is defining an anonymous function in Go that takes a parameter `key` of type `string`. This
+	// function is responsible for deleting a key-value pair from the `userProfile` map based on the
+	// provided key.
+	deleteMapData := func(key string) {
+		delete(userProfile, key)
+	}
+
 	addItem("name", "Ibrahim")
 	addItem("surename", "Hosseini")
 	addItem("ocupation", "Software Engineer")
@@ -20,23 +52,5 @@ func main() {
 	addItem("age", "24")
 
 	printMapData()
-}
 
-// The function `printMapData` iterates over a map called `userProfile` and prints out key-value pairs.
-func printMapData() {
-	println("==================================")
-	for key, value := range userProfile {
-		println(key, ": => ", value)
-	}
-}
-
-// The function `deleteMapData` deletes a key-value pair from a map called `userProfile` using the
-// specified key.
-func deleteMapData(key string) {
-	delete(userProfile, key)
-}
-
-// The function `addItem` adds a key-value pair to the `userProfile` map in Go.
-func addItem(key string, value string) {
-	userProfile[key] = value
 }
